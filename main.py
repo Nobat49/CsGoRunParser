@@ -24,6 +24,7 @@ for i in range(1005840,1750000):
 		''')
 		crashes.append([g_id,crash])
 		f = f + 1
+		sleep(0.3)
 	except:
 		print(f'''
 			Id = {i}
