@@ -1,5 +1,4 @@
 from time import sleep
-from ftplib import FTP
 import requests
 
 f = 1
@@ -32,15 +31,8 @@ for i in range(1005840,1750000):
 			''')
 		continue
 
-with open('crashes1.txt', 'a+') as file:
+with open('crashes.txt', 'a+') as file:
 	for txt in crashes:
 		file.write(str(txt) + '\n')
 	file.close()
 
-sleep(30)
-
-ftp = FTP('files.000webhost.com', 'herfiles', '2283320704')
-with open('crashes.txt', 'rb') as f:
-	ftp.storlines('STOR crashes.txt', f)
-	f.close()
-print('Upload succes')
